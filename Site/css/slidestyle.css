@@ -1,0 +1,110 @@
+body
+{
+	background: -webkit-repeating-radial-gradient(white, pink 10%, green 15%); /* Safari 5.1-6.0 */
+   background: -o-repeating-radial-gradient(white, pink 10%, green 15%); /* Opera 11.6-12.0 */
+   background: -moz-repeating-radial-gradient(white, pink 10%, green 15%); /* Firefox 3.6-15 */
+   background: repeating-radial-gradient(white, pink 10%, green 15%);
+   background-size: 100% 100%;
+}
+.carousel-inner{
+	
+	height: 80vh;
+}
+.carousel-item
+{
+	height: 100vh;
+}
+
+
+
+.bg-light
+{
+background:  -moz-linear-gradient( 90deg, rgb( 34, 115, 57 ) 0%, rgb( 94, 85, 32 ) 61.45%);
+background:  -webkit-linear-gradient( 90deg, rgb( 34, 115, 57 ) 0%, rgb( 94, 85, 32 ) 61.45%);
+}
+
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+   color: rgb( 172, 119, 76 )!important;
+    font-style: italic;
+     opacity: 0.651;
+     font-size: 30px;
+     text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+
+.navbar-nav {
+  margin-top: 10px;
+}
+.navbar-nav a {
+  color: pink;
+  text-align: center;
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+.navbar-brand {
+  padding-top: 25px;
+}
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Tahoma', serif;
+  color: rgb( 172, 119, 76 );
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 2px;
+  line-height: .75;
+  font-style: italic;
+  padding-left: 10px; 
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+.navbar-brand span { /* Restaurant name */
+  font-family: 'Tahoma', serif;
+  font-size: 2em;
+  color: rgb( 172, 119, 76 );
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+  font-style: italic;
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+
+
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+  margin-left: -50px;
+}
+
+.foot
+{
+	width: 100vw;
+	height: 20vh;
+	background-image: -moz-linear-gradient( 90deg, rgb( 34, 115, 57 ) 0%, rgb( 94, 85, 32 ) 61.45%);
+	background-image: -webkit-linear-gradient( 90deg, rgb( 34, 115, 57 ) 0%, rgb( 94, 85, 32 ) 61.45%);
+	z-index: 94;
+	display: inline-block;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	bottom: 0px;
+	text-align: center;
+	justify-content: center;
+}
+
+.Point
+{
+
+	color: #ac774c;
+	font-style:italic;
+	font-size: 30px;
+}

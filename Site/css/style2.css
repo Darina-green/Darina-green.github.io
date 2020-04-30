@@ -1,0 +1,701 @@
+*
+{
+	box-sizing: border-box;
+}
+body
+{
+	background-image: url("../imagesdark/Темный-вид.png") ;
+	background-size: 100% 150%;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+	width: 100%;
+	height: 5500px;
+}
+
+.checkboxdark{
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.label-mod{
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+}
+.label-mod:hover{
+  cursor: pointer;
+
+}
+.label-mod:before{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 7px solid green;
+  border-radius: 8px;
+  position: fixed;
+  top: 140px;
+  left: 3px;
+  z-index: 3;
+  background-color: white;
+}
+.label-mod:after{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 7px solid red;
+  border-radius: 8px;
+  position: fixed;
+  top: 140px;
+  left: 3px;
+  z-index: 3;
+  background-size: 25px 25px;
+  opacity: 0;
+  transition: opacity .1s linear;
+   background-color: black;
+}
+.checkboxdark:checked + .label-mod:before{
+  border: 1px;
+  background-color:none;
+}
+.checkboxdark:checked + .label-mod:after{
+  background-color: none;
+  opacity: 1;
+}
+
+.bg-light
+{
+ background-image: -moz-linear-gradient( 90deg, rgb( 22, 22, 22 ) 0%, rgb( 88, 133, 209 ) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb( 22, 22, 22 ) 0%, rgb( 88, 133, 209 ) 100%);
+}
+
+
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+   color: rgb( 187, 0, 0 )!important;
+    font-style: italic;
+     opacity: 0.651;
+     font-size: 30px;
+     text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+
+
+.navbar-nav {
+  margin-top: 10px;
+}
+.navbar-nav a {
+   color: rgb( 187, 0, 0 );
+  text-align: center;
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+.navbar-brand {
+  padding-top: 25px;
+}
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Tahoma', serif;
+  color: rgb( 187, 0, 0 );
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 2px;
+  line-height: .75;
+  font-style: italic;
+  padding-left: 10px; 
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+.navbar-brand span { /* Restaurant name */
+  font-family: 'Tahoma', serif;
+  font-size: 2em;
+   color: rgb( 187, 0, 0 );
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+  font-style: italic;
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+
+
+
+
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+  margin-left: -50px;
+}
+
+.yakor
+{
+	color: white;
+	background-color: black;
+	border: 1px solid white;
+	font-size: 20px;
+	position: fixed;
+	top: 80vh;
+	/*left: 88vw;*/
+	right: 0px;
+	width: 60px;
+	height: 30px;
+}
+
+.foot
+{
+	width: 100vw;
+	height: 100px;
+ background-image: -moz-linear-gradient( 90deg, rgb( 88, 133, 209 ) 0%, rgb( 37, 37, 37 ) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb( 88, 133, 209 ) 0%, rgb( 37, 37, 37 ) 100%);
+	/*position: absolute;*/
+	z-index: 94;
+	display: inline-block;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	/* top: 1100vh;*/
+	bottom: 0px;
+	text-align: center;
+	justify-content: center;
+
+}
+
+
+.Point
+{
+
+	 color: rgb( 187, 0, 0 );
+	font-style:italic;
+	font-size: 30px;
+}
+
+.head
+{
+		width: 100vw;
+	height: 110px;
+	background-color: olive;
+	/*position: fixed;*/
+	z-index: 1;
+	padding-left: 100px;
+	margin-left: -50px;
+	margin-top: -10px;
+	display: inline-block;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+.treeblock
+{
+	/*height: 100vh;
+	width: auto;*/
+	/*justify-content: center;*/
+	/*margin-bottom: 40px;*/
+	display: flex;
+	/*align-items: center;*/
+	flex-wrap: wrap;
+	margin-left: 60px;
+	padding-bottom: 60px;
+
+}
+.sslylca
+{
+	position: absolute;
+	margin-top: 200px;
+}
+
+ 
+ .hello
+ {
+ 	background-image: url("../imagesdark/hidark.png") ;
+ 	background-size: 100% 100%;
+ 	width: 60vw;
+ 	height: 90vh; 
+ 	position: relative;
+ 	display: flex;
+ 	align-items: center;
+
+ }
+
+ .text
+ {
+ 	 color: rgb( 187, 0, 0 );
+ 	padding-left: 10vw;
+ 	padding-top: 60vw;
+ 	font-size: 20px;
+ }
+ .mehi
+ {
+ 	background-image: url("../imagesdark/persdark.png") ;
+ 	background-size: 100% 100%;
+ 	width:345px ;
+ 	height: 465px;
+ 	margin-top: 20px; 
+	position: relative;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding-left: 50px;
+
+ }
+
+ .tabelnazv
+ {
+ 	background-image: url("../imagesdark/tabedark.png") ;
+ 	background-size: 100% 100%;
+ 	width: 70vw;
+ 	height: 150px;
+ 	margin-bottom: 30px;
+ }
+
+
+ table
+ {
+ 	
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+  height: 500px;
+  width: 65vw;
+  z-index: 2;
+  border: 4px solid #03167a;
+
+ }
+ table td
+ {
+ 	border: 5px solid #03167a;
+ 	text-align: center;
+ 	 color: rgb( 187, 0, 0 );
+ 	font-size: 14px;
+ }
+  table th
+ {
+ 	border-left: 2px solid #03167a;
+ 	color: #111111;
+ 	text-align: center;
+ 	font-size: 18px;
+ }
+
+ .tabelpers{
+	background-image: url("../imagesdark/cerep.png") ;
+ 	background-size: 100% 100%;
+ 	width: 227px;
+ 	height: 600px;
+
+ }
+
+ ul a:link, active, visited{
+	text-decoration: none;
+	 color: rgb( 187, 0, 0 );
+}
+ul a
+{
+	text-decoration: none;
+	 color: rgb( 187, 0, 0 );
+
+}
+.lovefilms
+{
+	background-image: url("../imagesdark/filmdark.png") ;
+ 	background-size: 100% 100%;
+ 	width: 76vw;
+ 	height: 326px;
+ 	margin-bottom: 30px;
+}
+
+.spysoc
+{
+	font-size: 32px;
+
+}
+
+.filmpers
+{
+	background-image: url("../imagesdark/dino.png") ;
+ 	background-size: 100% 100%;
+ 	width: 250px;
+ 	height: 400px;
+
+}
+
+.wordstema
+{
+	background-image: url("../imagesdark/wordzagl.png") ;
+ 	background-size: 100% 100%;
+ 	width: 72vw;
+ 	height: 326px;
+ 	margin-bottom: 30px;
+ 	margin-left: 10px;
+
+}
+
+ .persword
+ {
+ 	background-image: url("../imagesdark/poce.png") ;
+ 	background-size: 100% 100%;
+ 	width: 45vw;
+ 	height: 50vh; 
+ 	position: relative;
+ 	display: flex;
+ 	align-items: center;
+
+ }
+
+
+ .word3
+ {
+ 	background-image: url("../imagesdark/wordark.png") ;
+ 	background-size: 100% 100%;
+ 	width:345px ;
+ 	height: 465px;
+ 	margin-top: 20px; 
+	position: relative;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding-left: 50px;
+ 	margin-left: 60px;
+
+ }
+
+  .third
+ {
+ 	background-image: url("../imagesdark/dark3.png") ;
+ 	background-size: 100% 100%;
+ 	width: 25vw;
+ 	height: 93vw; 
+ 	position: relative;
+ 	display: flex;
+ 	align-items: center;
+
+ }
+
+
+ .threefoto
+ {
+ 	background-image: url("../imagesdark/darkcoct.png") ;
+ 	background-size: 100% 100%;
+ 	width:30vw;
+ 	height: 100vw;
+ 	margin-top: 20px; 
+	position: relative;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding-left: 50px;
+ 	margin-left: 60px;
+
+ }
+
+.rainbow
+{
+	background-image: url("../imagesdark/tuman.png") ;
+ 	background-size: 100% 100%;
+ 	height: 75vw;
+ 	width: 150vw;
+ 	text-align: center;
+ 	align-items: center;
+ 	display: flex;
+ 	 flex-direction: column;
+ 	 justify-content: center;
+}
+
+.cytata
+{
+	font-size: 18px;
+	text-align: center;
+	display: flex;
+	position:absolute;
+	text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+	
+}
+
+.cytata pre{
+	color: white;
+}
+
+
+
+.niz
+{
+	background-image: url("../imagesdark/khdark2.png") ;
+ 	background-size: 100% 100%;
+ 	height: 70vw;
+ 	width: 70vw;
+}
+
+
+
+ 
+
+@media (min-width: 900px)
+{
+.mehi
+ {
+ 	background-image: url("../imagesdark/persdark.png") ;
+ 	background-size: 100% 100%;
+ 	width:345px ;
+ 	height: 465px;
+ 	margin-top: 20px; 
+	position: relative;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding-left: 50px;
+
+ }
+
+.hello
+ {
+ 	background-image: url("../imagesdark/hidark.png") ;
+ 	background-size: 100% 100%;
+ 	width: 574px;
+ 	height: 741px;
+ }
+ .text
+ {
+ 	 color: rgb( 187, 0, 0 );
+ 	padding-left: 5vw;
+ 	padding-top: 32vw;
+ 	font-size: 30px;
+ }
+
+ table
+ {
+ 	
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+  height: 500px;
+  width: 50vw;
+  z-index: 2;
+  border: 4px solid #03167a;
+
+ }
+ table td
+ {
+ 	border: 5px solid #03167a;
+ 	text-align: center;
+ 	 color: rgb( 187, 0, 0 );
+ 	font-size: 20px;
+ }
+  table th
+ {
+ 	border-left: 5px solid #03167a;
+ 	color: #111111;
+ 	text-align: center;
+ 	font-size: 25px;
+ }
+
+ .spysoc
+{
+	font-size: 38px;
+
+}
+.filmpers
+{
+	margin-left: 100px;
+ 	width: 300px;
+ 	height: 500px;
+
+}
+#03167a
+ .persword
+ {
+ 	
+ 	width: 400px;
+ 	height: 60vh;  	
+
+ }
+ .word3
+ {
+ 	margin-left: 40px;
+ }
+.cytata
+{
+	font-size: 30px;
+	
+}
+
+
+.niz
+{
+	
+ 	height: 70vw;
+ 	width: 80vw;
+}
+
+
+}
+
+
+
+ @media (min-width: 700px) and (max-width: 899px) {
+ .hello
+ {
+ 	
+ 	width: 441px;
+ 	height: 570px; 
+
+ }
+
+ .text
+ {
+ 	 color: rgb( 187, 0, 0 );
+ 	padding-left: 5vw;
+ 	padding-top: 40vw;
+ 	font-size: 25px;
+ }
+ .mehi
+ {
+ 	
+ 	width:345px ;
+ 	height: 465px;
+ 	margin-top: 20px; 
+	position: relative;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding-left: 50px;
+
+ }
+
+  table
+ {
+ 	
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+  height: 500px;
+  width: 66vw;
+  z-index: 2;
+  border: 4px solid #03167a;
+
+ }
+ table td
+ {
+ 	border: 4px solid #03167a;
+ 	text-align: center;
+ 	 color: rgb( 187, 0, 0 );
+ 	font-size: 15px;
+ }
+  table th
+ {
+ 	border-left: 4px solid #03167a;
+ 	color: #111111;
+ 	text-align: center;
+ 	font-size: 20px;
+ }
+
+  .tabelpers{
+	 	width: 190px;
+ 	height: 500px;
+
+ }
+
+ .spysoc
+{
+	font-size: 36px;
+
+}
+.persword
+ {
+ 	
+ 	width: 45vw;
+ 	height: 60vh; 
+ }
+.word3
+ {
+ 	margin-left: 100px;
+ }
+
+
+ .threefoto
+ {
+
+ 	width:30vw;
+ 	height: 100vw;
+ 	
+ 	margin-left: 20px;
+
+ }
+
+ .cytata
+{
+	font-size: 20px;
+	
+}
+
+.niz
+{
+	
+ 	height: 70vw;
+ 	width: 75vw;
+}
+}
+
+
+ 
+
+ @media (max-width: 560px)
+ {
+ 	.mehi
+ {
+ 	
+ 	width:280px ;
+ 	height: 370px;
+ 	
+ }
+  .text
+ {
+ 	
+ 	padding-left: 7vw;
+ 	padding-top: 70vw;
+ 	font-size: 18px;
+ }
+ .spysoc
+{
+	font-size: 25px;
+
+}
+.word3
+ {
+ 	margin-left: 20px;
+ 		height: 450px;
+ }
+ .persword
+ {
+ 	
+ 	width: 45vw;
+ 	height: 60vw;  	
+
+ }
+
+ .cytata
+{
+	font-size: 15px;
+	
+}
+
+.niz
+{
+	
+ 	height: 70vw;
+ 	width: 70vw;
+}
+
+
+}
+
+
+

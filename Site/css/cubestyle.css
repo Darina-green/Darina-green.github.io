@@ -1,0 +1,492 @@
+
+
+.bg-light
+{
+ background-image: -moz-linear-gradient( 90deg, rgb( 22, 22, 22 ) 0%, rgb( 88, 133, 209 ) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb( 22, 22, 22 ) 0%, rgb( 88, 133, 209 ) 100%);
+}
+
+
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+   color: rgb( 187, 0, 0 )!important;
+    font-style: italic;
+     opacity: 0.651;
+     font-size: 30px;
+     text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+
+
+.navbar-nav {
+  margin-top: 10px;
+}
+.navbar-nav a {
+   color: rgb( 187, 0, 0 );
+  text-align: center;
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+.navbar-brand {
+  padding-top: 25px;
+}
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Tahoma', serif;
+  color: rgb( 187, 0, 0 );
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 2px;
+  line-height: .75;
+  font-style: italic;
+  padding-left: 10px; 
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+.navbar-brand span { /* Restaurant name */
+  font-family: 'Tahoma', serif;
+  font-size: 2em;
+   color: rgb( 187, 0, 0 );
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+  font-style: italic;
+  text-shadow: 3px 5.196px 9px rgb( 0, 0, 1 ); 
+}
+
+
+
+
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+  margin-left: -50px;
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.sun {
+  animation: rotate 20s infinite linear;
+}
+@keyframes spinsun {
+  0% { transform: rotate(0); }
+  100%   { transform: rotate(-360deg); }
+}
+@keyframes shadow {
+  0% { background-position: 130% 0%; }
+  33%{ background-position: 50% 0%; }
+  55% { background-position: 0% 0%; }
+  80%{ background-position: -50% 0%; }
+  100%{ background-position: -50% 0%; }
+}
+@keyframes orbitmercury {
+  0% { z-index:2; transform: rotateY(0); }
+  49% { z-index:2; }
+  50% { z-index:-2; }
+  99% { z-index:-2; }
+  100%   { z-index:2; transform: rotateY(360deg); }
+}
+@keyframes orbitvenus {
+  0% { z-index:3; transform: rotateY(0); }
+  49% { z-index:3; }
+  50% { z-index:-3; }
+  99% { z-index:-3; }
+  100%   { z-index:3; transform: rotateY(360deg); }
+}
+@keyframes orbitearth {
+  0% { z-index:4; transform: rotateY(0); }
+  49% {z-index:4;}
+  50% {z-index:-4;}
+  99% {z-index:-4;}
+  100%   { z-index:4; transform: rotateY(360deg);}
+}
+@keyframes orbitmars {
+  0% { z-index:5; transform: rotateY(0); }
+  49% { z-index:5; }
+  50% { z-index:-5; }
+  99% { z-index:-5; }
+  100%   { z-index:5; transform: rotateY(360deg); }
+}
+@keyframes orbitjupiter {
+  0% { z-index:6; transform: rotateY(270); }
+  49% { z-index:6; }
+  50% { z-index:-6; }
+  99% { z-index:-6; }
+  100%   { z-index:6; transform: rotateY(360deg); }
+}
+@keyframes orbitsaturn {
+  0% { z-index:7; transform: rotateY(270); }
+  49% { z-index:7; }
+  50% { z-index:-7; }
+  99% { z-index:-7; }
+  100%   { z-index:7; transform: rotateY(360deg); }
+}
+/* Keep planet image flat */
+@keyframes anti-spin {
+  from { transform: rotateY(0); }
+  to   { transform: rotateY(-360deg); }
+}
+@keyframes anti-spin-rings {
+  from { transform: rotateY(0) rotateX(73deg); }
+  to   { transform: rotateY(-360deg) rotateX(73deg); }
+}
+
+/* scene wrapper */
+.wrapper{
+  position:relative;
+  margin: 0 auto;
+  display:block;
+  margin-top: 200px;
+  perspective: 1000px;
+    perspective-origin: 60% 50%;
+  transform: rotate(-10deg);
+  
+}
+.wrapper > div {
+  position: relative;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  height: 0px;
+}
+.sun {
+  width: 250px;
+  margin: auto;
+  position: relative;
+  top: 0px;
+  z-index: 1;
+  height: 125px !important;
+  transform-style: preserve-3d;
+  opacity: .7;
+}
+.sun .star {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  /*background: url(http://www.waynedunkley.com/img/solar_system/sun.png) no-repeat;*/
+  background: radial-gradient(white, yellow);
+  background-size: cover;
+  border-radius: 250px;
+
+  margin: 0 auto;
+  animation: spinsun 40s infinite linear;
+}
+.frontsun {
+  transform: translateZ(100px);
+   width: 55%;
+  height: 55%;
+border-radius: 50%;
+background: radial-gradient(pink, blue);
+}
+
+.backsun {
+  transform: translateZ(-100px) rotateY(180deg);
+  border-radius: 250px;
+background: radial-gradient(orange, white);
+ width: 50px;
+  height: 50px;
+}
+
+.rightsun {
+  transform: rotateY(-270deg) translateX(100px);
+  transform-origin: top right;
+  border-radius: 250px;
+background: radial-gradient(red, green);
+ width: 25px;
+  height: 25px;
+}
+
+.leftsun {
+  transform: rotateY(270deg) translateX(-100px);
+  transform-origin: center left;
+  border-radius: 250px;
+background: radial-gradient(white, red);
+ width: 25px;
+  height: 25px;
+}
+
+.topsun {
+  transform: rotateX(-270deg) translateY(-100px);
+  transform-origin: top center;
+  border-radius: 250px;
+background-color: yellow;
+ width: 50px;
+  height: 50px;
+}
+
+.bottomsun {
+  transform: rotateX(270deg) translateY(100px);
+  transform-origin: bottom center;
+  border-radius: 250px;
+background: radial-gradient(pink, yellow);
+ width: 50px;
+  height: 50px;
+}
+//----------------------
+
+.planet {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  animation-iteration-count: infinite;
+  overflow:hidden;
+
+}
+.shadow {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 10px;
+  /*background: transparent url(http://www.waynedunkley.com/img/solar_system/shadow.png) 0% 0% no-repeat;*/
+   background-color: black;
+   opacity: .4;
+  background-size: cover;
+  border-radius: 90%;
+}
+.mercury {
+  position: absolute;
+  width: 400px;
+  z-index:2;
+  animation: orbitmercury 12s infinite linear;
+  top: -7.5px; /*half of planets height to keep orbits in line*/
+}
+.mercury .planet {
+  width:11px;
+  height:15px;
+  /*background-image: url(http://www.waynedunkley.com/img/solar_system/mercury.png);*/
+  background: radial-gradient(white, purple);
+  animation: anti-spin 12s infinite linear;
+   border-radius: 100%;
+   opacity: .7;
+}
+.mercury .shadow {
+  animation: shadow 12s infinite linear;
+}
+
+.venus {
+  position: absolute;
+  width: 506px;
+  z-index:3;
+  animation: orbitvenus 15s infinite linear;
+  top: -19px;
+}
+.venus .planet {
+  width:38px;
+  height:38px;
+  /*background-image: url(http://www.waynedunkley.com/img/solar_system/venus.png);*/
+ background: radial-gradient(yellow, orange);
+  animation: anti-spin 15s infinite linear;
+   border-radius: 100%;
+   opacity: .7;
+}
+.venus .shadow {
+  animation: shadow 15s infinite linear;
+}
+.earth {
+  position: absolute;
+  width: 610px;
+  z-index:4;
+  animation: orbitearth 20s infinite linear;
+  top: -20px;
+}
+.earth .planet {
+  width:40px;
+  height:40px;
+  /*background-image: url(http://www.waynedunkley.com/img/solar_system/earth.png?v=2);*/
+  background: radial-gradient(green, pink);
+  animation: anti-spin 20s infinite linear;
+   border-radius: 100%;
+   opacity: .7;
+}
+.earth .shadow {
+  animation: shadow 20s infinite linear;
+}
+.mars {
+  position: absolute;
+  width: 706px;
+  z-index:5;
+  animation: orbitmars 30s infinite linear;
+  top: -11px;
+}
+.mars .planet {
+  width:22px;
+  height:22px;
+  /*background-image: url(http://www.waynedunkley.com/img/solar_system/mars.png);*/
+  background: radial-gradient(red, yellow);
+  animation: anti-spin 30s infinite linear;
+   border-radius: 100%;
+   opacity: .7;
+}
+.mars .shadow {
+  animation: shadow 30s infinite linear;
+}
+.jupiter {
+  position: absolute;
+  width: 1100px;
+  z-index:6;
+  animation: orbitjupiter 50s infinite linear;
+  top: -64px;
+}
+.jupiter .planet {
+  width:128px;
+  height:128px;
+  /*background-image: url(http://www.waynedunkley.com/img/solar_system/jupiter.png);*/
+   background: radial-gradient(blue, yellow);
+  animation: anti-spin 50s infinite linear;
+   border-radius: 100%;
+   opacity: .7;
+}
+.jupiter .shadow {
+  animation: shadow 50s infinite linear;
+}
+/*--------------------------------------------------------------------------------------------------*/
+*{
+  box-sizing: border-box;
+}
+body
+{
+  background-color: #395179;
+  overflow-x:hidden; 
+}
+table
+{
+  background-image: url("../imagesslide/magic ball.png")  ;
+  width: 100vw;
+  height:183vw ;
+  background-size: 100%;
+  position: absolute;
+
+}
+ td 
+{
+
+  position: absolute;
+  border:none;
+  background-color: rgba(0,0,0,0);
+  z-index: 2;
+
+}
+
+.cartina
+{
+     background-color: rgba(0,0,0,0);
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    margin-left: 100px;
+    margin-top: 300px;
+
+}
+
+.checkboxdark{
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.label-mod{
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+}
+.label-mod:hover{
+  cursor: pointer;
+
+}
+.label-mod:before{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 7px solid green;
+  border-radius: 8px;
+  position: fixed;
+  top: 100px;
+  left: 10px;
+  z-index: 3;
+  background-color: white;
+}
+.label-mod:after{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 7px solid red;
+  border-radius: 8px;
+  position: fixed;
+  top: 100px;
+  left: 10px;
+  z-index: 3;
+  background-size: 25px 25px;
+  opacity: 0;
+  transition: opacity .1s linear;
+   background-color: black;
+}
+.checkboxdark:checked + .label-mod:before{
+  border: 1px;
+  background-color:none;
+}
+.checkboxdark:checked + .label-mod:after{
+  background-color: none;
+  opacity: 1;
+}
+
+  
+  @media(min-width: 992px){
+.cartina
+{
+    background-color: rgba(0,0,0,0);
+    align-self: center;
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    margin-left: 300px;
+    margin-top: 900px;
+
+}
+
+}
+  @media (min-width: 768px) and (max-width: 991px){
+.cartina
+{
+    background-color: rgba(0,0,0,0);
+    align-self: center;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    margin-left: 100px;
+    margin-top: 700px;
+
+}
+
+}
+
+
+
