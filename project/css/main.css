@@ -1,3 +1,7 @@
+body{
+    background-image: url('../images/pallet.jpg');
+    background-size: contain;
+}
 /** HEADER **/
 #header-nav {
     background-color: #f6b319;
@@ -6,7 +10,6 @@
     margin-bottom: 0px;
     font-family: 'Oxygen';
   }
-  
   #logo-img {
     background: url('../images/logo.png') no-repeat;
     width: 130px;
@@ -14,8 +17,6 @@
     margin: 10px 15px 10px 0;
     background-size: contain;
   }
-
-
   .navbar-brandname {
     padding-top: 25px;
     height: 100px; 
@@ -32,7 +33,6 @@
     padding-right: 15px;
     line-height: 20px;
   }
-
   .navbar-brandname h1{
     color: #557c3e;
     font-size: 50px;
@@ -40,7 +40,6 @@
   .navbar-brand a:hover, .navbar-brand a:focus {
     text-decoration: none;
   }
-
   #nav-list {
     margin-top: 10px;
     padding-top: 15px;
@@ -60,8 +59,6 @@
   #nav-list a:hover {
     background: #E7E7E7;
   }
-
-  
   .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
     border: 1px solid #61122f;
   }
@@ -69,39 +66,78 @@
     clear: both;
     margin-top: -50px;
   }
-  /* END HEADER */
+  /** END HEADER **/
+
+  /** PAGE SPACE **/
+  .page-space{
+    background-image: url('../images/7742f8792365cedd9a598049c4a2be3d.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    padding-top: 35px;
+  }
+
+  .quiz-image{
+    width: 400px;
+    height: 400px;
+    margin: auto auto auto auto;
+    padding-top: 20px;
+    background-color: #951C49;
+  }
+  /** END PAGE SPACE **/
+
+  /** FOOTER **/
+  /** END FOOTER **/
+
 
   @media (min-width: 768px) and (max-width: 991px) {
+    /** HEADER **/
     .navbar-brandname {
         padding-top: 10px;
         height: 80px;
-      }
-      .navbar-brandname h1 { /* Restaurant name */
+    }
+    .navbar-brandname h1 { 
         
         font-size: 40px; /* 1vw = 1% of viewport width */
-      }
-      #nav-list {
+    }
+    #nav-list {
         padding-top: 0px;
-      }
-      #nav-list a {
+    }
+    #nav-list a {
         font-size: 1em;
-      }
-      #nav-list p {
+    }
+    #nav-list p {
         font-size: 1em;
         padding: 10px 15px;
-      }
+    }
+    /** END HEADER **/
+      
+    /** PAGE SPACE **/
+    /** END PAGE SPACE **/
+
+    /** FOOTER **/
+    /** END FOOTER **/
   }
 
   @media (min-width: 768px){
+    /** HEADER **/
   .containers {
     width: auto;
     padding: 0px 20px 0px 20px ;
   }
+    /** END HEADER **/
+      
+    /** PAGE SPACE **/
+    /** END PAGE SPACE **/
+
+    /** FOOTER **/
+    /** END FOOTER **/
   }
 
 
   @media (max-width: 767px) {
-    /* Header */
+    /* HEADER */
     .navbar-brandname {
       padding-top: 10px;
       height: 80px;
@@ -109,7 +145,6 @@
     .navbar-brandname h1 { /* Restaurant name */
       font-size: 40px; /* 1vw = 1% of viewport width */
     }
-    
     #nav-list {
         padding-top: 0px;
       }
@@ -124,7 +159,6 @@
       font-size: 1em;
       margin-right: 5px;
     }
-  
     #call-btn > a {
       font-size: 1.5em;
       display: block;
@@ -140,5 +174,15 @@
       letter-spacing: .1em;
       text-transform: uppercase;
     }
-    /* End Header */
+    /* END HEADER */
+      
+    /** PAGE SPACE **/
+    .quiz-image{
+        width: 300px;
+        height: 400px;
+    }
+    /** END PAGE SPACE **/
+
+    /** FOOTER **/
+    /** END FOOTER **/
 }
