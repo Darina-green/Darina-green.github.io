@@ -237,35 +237,39 @@ canvas.addEventListener("touchmove", function (e) {
   }
   
   function MovePlayer(e) {
-      var rect = canvas.getBoundingClientRect();
-      var mouseX, mouseY;
-    
-      if (e.clientX !== undefined && e.clientY !== undefined) {
-        mouseX = e.clientX - rect.left;
-        mouseY = e.clientY - rect.top;
-      } else if (e.pageX !== undefined && e.pageY !== undefined) {
-        mouseX = e.pageX - rect.left;
-        mouseY = e.pageY - rect.top;
-      } else if (e.touches.length > 0) {
-        mouseX = e.touches[0].clientX - rect.left;
-        mouseY = e.touches[0].clientY - rect.top;
-      }
-    
-      if (e.buttons === 1) {
-        player.x = mouseX - player.image.width * scale / 2;
-        player.y = mouseY - player.image.height * scale;
-    
-        if (player.x < 0) {
-          player.x = 0;
-        } else if (player.x + player.image.width * scale > canvas.width) {
-          player.x = canvas.width - player.image.width * scale;
+      //if (e.buttons === 1) {
+        var rect = canvas.getBoundingClientRect();
+        var mouseX, mouseY;
+      
+        if (e.clientX !== undefined && e.clientY !== undefined) {
+          mouseX = e.clientX - rect.left;
+          mouseY = e.clientY - rect.top;
+        } else if (e.touches.length > 0) {
+          mouseX = e.touches[0].clientX - rect.left;
+          mouseY = e.touches[0].clientY - rect.top;
         }
-        if (player.y < 0) {
-          player.y = 0;
-        } else if (player.y + player.image.height * scale > canvas.height) {
-          player.y = canvas.height - player.image.height * scale;
+      
+        if (e.type === 'mousedown' || e.type === 'touchstart') {
+          isMoving = true;
+        } else if (e.type === 'mouseup' || e.type === 'touchend') {
+          isMoving = false;
         }
-      }
+      
+        if (isMoving) {
+          player.x = mouseX - player.image.width * scale / 2;
+          player.y = mouseY - player.image.height * scale;
+      
+          if (player.x < 0) {
+            player.x = 0;
+          } else if (player.x + player.image.width * scale > canvas.width) {
+            player.x = canvas.width - player.image.width * scale;
+          }
+          if (player.y < 0) {
+            player.y = 0;
+          } else if (player.y + player.image.height * scale > canvas.height) {
+            player.y = canvas.height - player.image.height * scale;
+          }
+        }
   }
   
   function ResetGame() {
