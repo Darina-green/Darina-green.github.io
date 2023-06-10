@@ -88,15 +88,36 @@ class mySky {
     e.preventDefault();
     return false;
   });
+
   window.addEventListener("mousemove", function (e) {
     MovePlayer(e);
   });
   canvas.addEventListener("mousedown", function () {
-    isMoving = true; // При натисканні кнопки миші встановлюємо прапор isMoving в true
+    isMoving = true;
   });
+
   canvas.addEventListener("mouseup", function () {
-    isMoving = false; // При відпусканні кнопки миші встановлюємо прапор isMoving в false
+    isMoving = false;
   });
+
+  canvas.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    isMoving = true;
+    var touch = e.touches[0];
+    MovePlayer(touch);
+  });
+
+  canvas.addEventListener("touchend", function () {
+    isMoving = false;
+  });
+
+canvas.addEventListener("touchmove", function (e) {
+  e.preventDefault();
+  var touch = e.touches[0];
+  MovePlayer(touch);
+});
+
+
   var objects = [];
   var fly_path = [
     new mySky("images/7742f8792365cedd9a598049c4a2be3d.png", 0),
@@ -216,27 +237,35 @@ class mySky {
   }
   
   function MovePlayer(e) {
-    if (e.buttons === 1) {
       var rect = canvas.getBoundingClientRect();
-      var mouseX = e.clientX - rect.left;
-      var mouseY = e.clientY - rect.top;
-  
-      
-      player.x = mouseX - player.image.width * scale / 2;
-      player.y = mouseY - player.image.height * scale;
-  
-      
-      if (player.x < 0) {
-        player.x = 0;
-      } else if (player.x + player.image.width * scale > canvas.width) {
-        player.x = canvas.width - player.image.width * scale;
+      var mouseX, mouseY;
+    
+      if (e.clientX !== undefined && e.clientY !== undefined) {
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      } else if (e.pageX !== undefined && e.pageY !== undefined) {
+        mouseX = e.pageX - rect.left;
+        mouseY = e.pageY - rect.top;
+      } else if (e.touches.length > 0) {
+        mouseX = e.touches[0].clientX - rect.left;
+        mouseY = e.touches[0].clientY - rect.top;
       }
-      if (player.y < 0) {
-        player.y = 0;
-      } else if (player.y + player.image.height * scale > canvas.height) {
-        player.y = canvas.height - player.image.height * scale;
+    
+      if (e.buttons === 1) {
+        player.x = mouseX - player.image.width * scale / 2;
+        player.y = mouseY - player.image.height * scale;
+    
+        if (player.x < 0) {
+          player.x = 0;
+        } else if (player.x + player.image.width * scale > canvas.width) {
+          player.x = canvas.width - player.image.width * scale;
+        }
+        if (player.y < 0) {
+          player.y = 0;
+        } else if (player.y + player.image.height * scale > canvas.height) {
+          player.y = canvas.height - player.image.height * scale;
+        }
       }
-    }
   }
   
   function ResetGame() {
@@ -252,222 +281,3 @@ class mySky {
     player.dead = true;
   }
   
-  Start();
-/*const UPDATE_TIME = 1000 / 60;
-
-var timer = null;
-
-var canvas = document.getElementById("game1-canvas"); 
-var ctx = canvas.getContext("2d"); 
-
-var scale = 0.5; 
-
-Resize(); 
-
-window.addEventListener("resize", Resize); 
-
-canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); return false; }); 
-
-window.addEventListener("keydown", function (e) { KeyDown(e); }); 
-
-var objects = []; 
-
-var roads = 
-[
-    new mySky("images/7742f8792365cedd9a598049c4a2be3d.png", 0),
-    new mySky("images/7742f8792365cedd9a598049c4a2be3d.png", 1000),
-]; 
-
-var player = new myFly("images/logos.png", canvas.width / 2, canvas.height / 2, true); 
-
-var speed = 2;
-
-var score = 0;
-
-//Start();
-
-function Start()
-{
-    if(!player.dead)
-    {
-        clearInterval(timer); 
-        timer = null;
-        timer = setInterval(Update, UPDATE_TIME); 
-    }
-    else{
-        Resize(); 
-
-        window.addEventListener("resize", Resize); 
-        
-        canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); return false; }); 
-        
-        window.addEventListener("keydown", function (e) { KeyDown(e); }); 
-        
-        objects = []; 
-        
-        roads = 
-        [
-            new mySky("images/7742f8792365cedd9a598049c4a2be3d.png", 0),
-            new mySky("images/7742f8792365cedd9a598049c4a2be3d.png", 1000),
-        ]; 
-        
-        player = new myFly("images/logos.png", canvas.width / 2, canvas.height / 2, true); 
-        
-        speed = 2;
-        
-        score = 0;
-        timer = setInterval(Update, UPDATE_TIME); 
-    }
-    
-}
-
-function Stop()
-{
-    clearInterval(timer); 
-    timer = null;
-}
-
-function Update() 
-{
-    score += 1;
-
-    roads[0].Update(roads[1]);
-    roads[1].Update(roads[0]);
-
-    if(RandomInteger(0, 10000) > 9700) 
-    {
-        objects.push(new myFly("images/logos.png", RandomInteger(250, 400) * -1, RandomInteger(30, canvas.height - 50), false));
-    }
-
-    player.Update();
-
-    if(player.dead)
-    {
-        alert("Game over!");
-        Stop();
-    }
-
-    var isDead = false; 
-
-    for(var i = 0; i < objects.length; i++)
-    {
-        objects[i].Update();
-
-        if(objects[i].dead)
-        {
-            isDead = true;
-        }
-    }
-
-    if(isDead)
-    {
-        objects.shift();
-    }
-
-    var hit = false;
-
-    for(var i = 0; i < objects.length; i++)
-    {
-        hit = player.Collide(objects[i]);
-
-        if(hit)
-        {
-            alert("Game over!" + "Your score = "+score);
-            Stop();
-            player.dead = true;
-            break;
-        }
-    }
-
-    Draw();
-}
-
-function Draw() 
-{
-    ctx.clearRect(0, 0, canvas.width, canvas.height); 
-
-    for(var i = 0; i < roads.length; i++)
-    {
-        ctx.drawImage
-        (
-            roads[i].image, 
-            0, 
-            0, 
-            roads[i].image.width, 
-            roads[i].image.height, 
-            roads[i].x, 
-            roads[i].y, 
-            canvas.width, 
-            canvas.height 
-        );
-    }
-
-    DrawFlyingObgect(player);
-
-    for(var i = 0; i < objects.length; i++)
-    {
-        DrawFlyingObgect(objects[i]);
-    }
-}
-
-function DrawFlyingObgect(car)
-{
-    ctx.drawImage
-    (
-        car.image, 
-        0, 
-        0, 
-        car.image.width, 
-        car.image.height, 
-        car.x, 
-        car.y, 
-        car.image.width * scale, 
-        car.image.height * scale 
-    );
-}
-
-function KeyDown(e)
-{
-    switch(e.keyCode)
-    {
-        case 37: //Left
-            player.Move("x", -speed);
-            break;
-
-        case 39: //Right
-            player.Move("x", speed);
-            break;
-
-        case 38: //Up
-            player.Move("y", -speed);
-            break;
-
-        case 40: //Down
-            player.Move("y", speed);
-            break;
-
-        case 27: //Esc
-            if(timer == null)
-            {
-                Start();
-            }
-            else
-            {
-                Stop();
-            }
-            break;
-    }
-}
-
-function Resize()
-{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-function RandomInteger(min, max) 
-{
-    let rand = min - 0.5 + Math.random() * (max - min + 1);
-    return Math.round(rand);
-}
-*/
