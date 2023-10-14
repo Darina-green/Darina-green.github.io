@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chiller</title>
+	    <link rel="stylesheet" type="text/css" href="css/game1.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+<!-- HEADER-->
+        <header>
+            <nav id="header-nav" class="navbar navbar-default">
+              <div class="containers">
+                <div class="navbar-header">
+                  <a href="main.html" class="pull-left visible-md visible-lg">
+                    <div id="logo-img" alt="Logo image"></div>
+                  </a>
+        
+                  <div class="navbar-brandname">
+                    <a href="main.html"><h1>Chiller</h1></a>
+                  </div>
+        
+                  <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                
+                <div id="collapsable-nav" class="collapse navbar-collapse">
+                   <ul id="nav-list" class="nav navbar-nav navbar-right">
+                    <li id="navHomeButton" class="visible-xs active">
+                      <a href="main.html"><b>Home</b></a>
+                    </li>
+                    <li id="navMenuButton">
+                      <a href="art.html">
+                        <br class="hidden-xs"><b>Art</b></a>
+                    </li>
+                    <li>
+                      <a href="game.html">
+                        <br class="hidden-xs"><b>Games</b></a>
+                    </li>
+                    <li>
+                      <a href="music.html">
+                        <br class="hidden-xs"><b>Music</b></a>
+                    </li>
+                    <li>
+                    <a href="active.html">
+                        <br class="hidden-xs"><b>Articles</b></a>
+                    </li>
+                    <li>
+                      <a href="contacts.html">
+                        <br class="hidden-xs"><b>Contacts</b></a>
+                    </li>
+                    <li>
+                      <a href="about.html">
+                        <br class="hidden-xs"><b>About</b></a>
+                    </li>
+                    <li>
+                        <p>
+                          <br class="hidden-xs"><b>2023</b></p>
+                      </li>
+
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </header>
+<!-- END HEADER-->
+
+<!-- MAIN BODY-->
+        <div class = "page-space">
+            <div class="game1header_text"><p>Chill game #1</p></div>
+            <div class = "gamezone">
+                <canvas width="500" height="450" class="game1-canvas" id="game1-canvas">Browser can`t use canvas</canvas>    
+            </div>
+            <p>
+                <button id="butStart" onclick="Start()"><img src="images/yes.png" alt="Start" style=" width: 300px; height: 300px;"></button>
+                <button id="butStop" onclick="Stop()"><img src="images/no.png" alt="Stop" style=" width: 300px; height: 300px;"></button>
+            </p>
+            <p>
+              <audio id="backgroundMusic" src="music/brams_kolybelnaya.mp3" loop></audio>
+              <input type="checkbox" id="musicCheckbox">
+              <label for="musicCheckbox">Увімкнути музику</label>
+            </p>
+        </div>
+<!-- END MAIN BODY-->
+<!--  FOOTER -->
+<footer>
+  <div class="foot">
+    <div class="Point">&#169; Darina Chulcova IKM-M222B UKRAINE 2023</div>
+  </div>
+</footer>
+<!--  END FOOTER -->
+          <script src="js/jquery-2.1.4.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/ajax-utils.js"></script>
+          <script src="js/game1.js"></script>
+    </body>
+</html>
